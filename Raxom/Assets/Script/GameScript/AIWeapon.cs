@@ -26,7 +26,7 @@ public class AIWeapon : MonoBehaviour
 
         Collider2D colInfo = Physics2D.OverlapCircle(pos, attackRange, attackMask);
         if (colInfo != null && PlayerCombat.instance.isAttackingAnimation == false && Character2DController.instance.isDashingAnimation == false)
-        {
+        {//jika attack1 animation assassin sedang nyala maka player gak bisa terkena damage
             colInfo.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
             nextAttackTime = Time.time + 1f / 1.5f;
         }
