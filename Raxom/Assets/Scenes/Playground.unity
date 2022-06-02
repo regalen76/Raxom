@@ -2119,6 +2119,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 673525028}
+  - component: {fileID: 673525029}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
@@ -2144,6 +2145,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &673525029
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673525027}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2e3480ab77b5add4fadfd6e5da091665, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &686934541
 GameObject:
   m_ObjectHideFlags: 0
@@ -3465,7 +3485,7 @@ MonoBehaviour:
   attackPoint: {fileID: 1781895133}
   attackPoint2: {fileID: 2145076118}
   mageAttackPoint: {fileID: 588124460}
-  attackRange: 1.26
+  attackRange: 2.58
   attackRange2: 4
   mageAttackRange: 4.7
   attackDamage: 50
@@ -5812,7 +5832,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1781895132}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.17, y: -0.23, z: 0}
+  m_LocalPosition: {x: 0.03, y: -0.23, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 985422940}
