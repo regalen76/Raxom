@@ -37,7 +37,8 @@ public class PlayerCombat : MonoBehaviour
     }
 
     private void Attack(){
-        if(Input.GetKeyDown(KeyCode.D) && !isAttacking && Time.time >= Character2DController.instance.nextDashTime){
+        if(Input.GetKeyDown(KeyCode.D) && !isAttacking && Time.time >= Character2DController.instance.nextDashTime && this.animator.GetCurrentAnimatorStateInfo(0).IsName("Assassin_attack1") != true)
+        {
             isAttacking = true;
         }
         else if(Input.GetKeyDown(KeyCode.D) && !isAttacking && Time.time <= Character2DController.instance.nextDashTime)
