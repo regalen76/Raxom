@@ -96,15 +96,15 @@ public class Character2DController : MonoBehaviour
         // transform.position += new Vector3(movement,0,0) * Time.deltaTime * MovementSpeed;
         if(Time.time >= nextDashTime)
         {
-            if (Input.GetKey(KeyCode.LeftShift) && IsGrounded()==true && selectedIndex == 0)  //dash kusus assassin
+            if (Input.GetKey(KeyCode.LeftShift) && IsGrounded()==true && selectedIndex == 0 && movement != 0)  //dash kusus assassin
             {
                 animator.SetTrigger("Dash");
                 StartCoroutine(dashmove(movement,_rigidbody));
-                if (GameObject.FindGameObjectWithTag("Player").transform.rotation.y == 0)
+                if (movement > 0)  //dash kekanan
                 {
                     transform.position += new Vector3(1, 0) * dashSpeed;
                 }
-                else if (GameObject.FindGameObjectWithTag("Player").transform.rotation.y != 0)
+                else if (movement < 0)  //dash kekiri
                 {
                     transform.position += new Vector3(-1, 0) * dashSpeed;
                 }
