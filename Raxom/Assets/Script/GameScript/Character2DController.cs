@@ -65,9 +65,13 @@ public class Character2DController : MonoBehaviour
         {
             MovementSpeed = 15;
             JumpForce = 25;
-        }
-        if (!this.animator.GetCurrentAnimatorStateInfo(0).IsName("Assassin_attack1"))  //jika melakukan attack1 ass maka gak bisa gerak
+        } else if(selectedIndex == 1) // jika chara mage
         {
+            MovementSpeed = 7;
+            JumpForce = 25;
+        }
+        if (!this.animator.GetCurrentAnimatorStateInfo(0).IsName("Assassin_attack1") && !this.animator.GetCurrentAnimatorStateInfo(0).IsName("Mage_attack1") && !this.animator.GetCurrentAnimatorStateInfo(0).IsName("Mage_transisi1") && !this.animator.GetCurrentAnimatorStateInfo(0).IsName("Mage_attack2") && !this.animator.GetCurrentAnimatorStateInfo(0).IsName("Mage_transisi2"))
+        {   //jika melakukan attack1 ass && mage attack1 && mage attack2 maka gak bisa gerak
             Move();
             Jump();
             Look();
@@ -88,7 +92,7 @@ public class Character2DController : MonoBehaviour
         // transform.position += new Vector3(movement,0,0) * Time.deltaTime * MovementSpeed;
         if(Time.time >= nextDashTime)
         {
-            if (Input.GetKey(KeyCode.LeftShift) && IsGrounded()==true)  //dash
+            if (Input.GetKey(KeyCode.LeftShift) && IsGrounded()==true && selectedIndex == 0)  //dash kusus assassin
             {
                 animator.SetTrigger("Dash");
                 StartCoroutine(dashmove(movement,_rigidbody));

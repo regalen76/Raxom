@@ -16,8 +16,6 @@ public class PlayerCharacter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        /*this.GetComponent<Animator>().runtimeAnimatorController = anim1 as RuntimeAnimatorController;*/
-
         if (!PlayerPrefs.HasKey("selectedIndex"))
         {
             selectedIndex = 0;
@@ -33,6 +31,14 @@ public class PlayerCharacter : MonoBehaviour
     {
         Character character = characterDB.GetCharacter(selectedIndex);
         artworkSprite.sprite = character.characterSprite;
+        if (selectedIndex == 0)
+        {
+            this.GetComponent<Animator>().runtimeAnimatorController = anim1 as RuntimeAnimatorController;  //run assassin animation
+        }
+        else if (selectedIndex == 1)
+        {
+            this.GetComponent<Animator>().runtimeAnimatorController = anim2 as RuntimeAnimatorController;  //run mage animation
+        }
     }
 
     private void Load()
