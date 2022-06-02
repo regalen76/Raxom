@@ -47,6 +47,9 @@ TextureImporter:
   - first:
       213: 6869143155474874047
     second: Attack From Idle (new)_6
+  - first:
+      213: 1187004347644499649
+    second: Display
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -482,6 +485,27 @@ TextureImporter:
       bones: []
       spriteID: fbeb26d3e49145f50800000000000000
       internalID: 6869143155474874047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Display
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 640
+        width: 65
+        height: 29
+      alignment: 9
+      pivot: {x: -0.24, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c6d1384a26197010800000000000000
+      internalID: 1187004347644499649
       vertices: []
       indices: 
       edges: []
