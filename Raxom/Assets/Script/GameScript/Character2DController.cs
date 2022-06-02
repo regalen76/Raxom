@@ -85,6 +85,10 @@ public class Character2DController : MonoBehaviour
             }
             
         }
+        if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("Assassin_attack1") || this.animator.GetCurrentAnimatorStateInfo(0).IsName("Assassin_dashattack") || this.animator.GetCurrentAnimatorStateInfo(0).IsName("Mage_attack1") || this.animator.GetCurrentAnimatorStateInfo(0).IsName("Mage_transisi1") || this.animator.GetCurrentAnimatorStateInfo(0).IsName("Mage_attack2") || this.animator.GetCurrentAnimatorStateInfo(0).IsName("Mage_transisi2"))  //buat player stop ketika nyerang
+        {
+            this._rigidbody.velocity = Vector3.zero;
+        }
     }
 
     private void Move(){ //Pergerakan basic kiri kanan
