@@ -70,8 +70,8 @@ public class Character2DController : MonoBehaviour
             MovementSpeed = 7;
             JumpForce = 25;
         }
-        if (!this.animator.GetCurrentAnimatorStateInfo(0).IsName("Assassin_attack1") && !this.animator.GetCurrentAnimatorStateInfo(0).IsName("Mage_attack1") && !this.animator.GetCurrentAnimatorStateInfo(0).IsName("Mage_transisi1") && !this.animator.GetCurrentAnimatorStateInfo(0).IsName("Mage_attack2") && !this.animator.GetCurrentAnimatorStateInfo(0).IsName("Mage_transisi2"))
-        {   //jika melakukan attack1 ass && mage attack1 && mage attack2 maka gak bisa gerak
+        if (!this.animator.GetCurrentAnimatorStateInfo(0).IsName("Assassin_attack1") && !this.animator.GetCurrentAnimatorStateInfo(0).IsName("Assassin_dashattack") && !this.animator.GetCurrentAnimatorStateInfo(0).IsName("Mage_attack1") && !this.animator.GetCurrentAnimatorStateInfo(0).IsName("Mage_transisi1") && !this.animator.GetCurrentAnimatorStateInfo(0).IsName("Mage_attack2") && !this.animator.GetCurrentAnimatorStateInfo(0).IsName("Mage_transisi2"))
+        {   //jika melakukan attack1 ass && dashattack ass && mage attack1 && mage attack2 maka gak bisa gerak
             Move();
             Jump();
             Look();
