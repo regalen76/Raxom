@@ -55,7 +55,7 @@ public class Character2DController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene(0);
         }
     }
 
