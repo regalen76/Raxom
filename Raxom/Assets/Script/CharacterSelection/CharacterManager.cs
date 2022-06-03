@@ -26,6 +26,9 @@ public class CharacterManager : MonoBehaviour
     public GameObject assassinSkill;  //display skill
     public GameObject mageSkill;
 
+    public GameObject assassinSkill2;
+    public GameObject mageSkill2;
+
     void Start()
     {
         if (!PlayerPrefs.HasKey("selectedIndex"))
@@ -69,19 +72,12 @@ public class CharacterManager : MonoBehaviour
             statsBar2.SetStats(80); //speed
             statsBar3.SetStats(20); //range
 
-
-            assassinSkill.SetActive(true);
-            mageSkill.SetActive(false);
         }
         if (selectedIndex == 1) //jika assassin
         {
             statsBar.SetStats(70); //damage
             statsBar2.SetStats(30); //speed
             statsBar3.SetStats(75); //range
-
-
-            mageSkill.SetActive(true);
-            assassinSkill.SetActive(false);
         }
 
         if (Input.GetKeyDown(KeyCode.Tab))
@@ -102,6 +98,12 @@ public class CharacterManager : MonoBehaviour
 
             stats.SetActive(true);
             skill.SetActive(false);
+
+            mageSkill.SetActive(false);
+            assassinSkill.SetActive(false);
+            assassinSkill2.SetActive(false);
+            mageSkill2.SetActive(false);
+
         } else if(tab == 1)
         {
             tab2.enabled = true;
@@ -109,6 +111,22 @@ public class CharacterManager : MonoBehaviour
 
             skill.SetActive(true);
             stats.SetActive(false);
+
+            if(selectedIndex == 0)
+            {
+                mageSkill.SetActive(false);
+                assassinSkill.SetActive(true);
+                assassinSkill2.SetActive(true);
+                mageSkill2.SetActive(false);
+            }
+            else if(selectedIndex == 1)
+            {
+                mageSkill.SetActive(true);
+                assassinSkill.SetActive(false);
+                assassinSkill2.SetActive(false);
+                mageSkill2.SetActive(true);
+            }
+            
         }
     }
 
