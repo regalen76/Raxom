@@ -10,11 +10,13 @@ public class PlayerHealth : MonoBehaviour
     int currentHealth;
     public HealthBar healthBar;
 
-    // Start is called before the first frame update
+    public GameObject GameOver;
+
     void Start()
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        GameOver.SetActive(false);
     }
 
     public void TakeDamage(int damage){
@@ -32,13 +34,15 @@ public class PlayerHealth : MonoBehaviour
 
         animator.SetBool("IsDead", true);//animation dead
 
+        gameObject.transform.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
         GetComponent<Collider2D>().enabled =false; //disable collider
-        this.enabled = false; //disable script
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        MonoBehaviour[] scripts = gameObject.GetComponents<MonoBehaviour>(); //disable script
+        foreach (MonoBehaviour script in scripts)
+        {
+            script.enabled = false;
+        }
+
+        GameOver.SetActive(true);
     }
 }

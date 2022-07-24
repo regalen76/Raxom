@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Assa
+  m_Controller: {fileID: 9100000, guid: 6e710eca4672f254e9544548fcb1829d, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 42b2bf4e18304bc4a8aa7c93e1cce81f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 66928a5ca54581042a2beca5ad53499c, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: b47766131753e24498aac8597e506a72, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: ff08f5c4139363640a7afcd933636c6a, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 29b9f3a3708de3e4a82d3bda80284477, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 2929b73c13be42a469e55e4533f28e0a, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 1206ce1afa283484aa8e7fea9e51a69c, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b2d226ff21ca87041ae7b3fb5c3ce27e, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 1b94668bfec98154a9bda7f6b0a91058, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 89a25129247115e449e3a9c93a4aacb2, type: 2}

@@ -29,6 +29,9 @@ public class CharacterManager : MonoBehaviour
     public GameObject assassinSkill2;
     public GameObject mageSkill2;
 
+    public GameObject difficulty1;
+    public GameObject difficulty2;
+
     void Start()
     {
         if (!PlayerPrefs.HasKey("selectedIndex"))
@@ -57,13 +60,19 @@ public class CharacterManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.LeftArrow))  //change chara ke kiri
         {
+            FindObjectOfType<AudioManager>().Play("UI");
             BackOption();
         } else if (Input.GetKeyDown(KeyCode.RightArrow))  // change chara ke kanan
         {
+            FindObjectOfType<AudioManager>().Play("UI");
             NextOption();
         } else if (Input.GetKeyDown(KeyCode.D))  //play
         {
-            ChangeScene(1);
+            FindObjectOfType<AudioManager>().Play("UI");
+            if (PlayerPrefs.GetInt("SelectedMenu") == 0)  //play level 1
+            {
+                ChangeScene(3);
+            }
         }
 
         if(selectedIndex == 0) //jika assassin
@@ -71,18 +80,22 @@ public class CharacterManager : MonoBehaviour
             statsBar.SetStats(50); //damage
             statsBar2.SetStats(80); //speed
             statsBar3.SetStats(20); //range
-
+            difficulty1.SetActive(true);
+            difficulty2.SetActive(false);
         }
         if (selectedIndex == 1) //jika assassin
         {
             statsBar.SetStats(70); //damage
             statsBar2.SetStats(30); //speed
             statsBar3.SetStats(75); //range
+            difficulty1.SetActive(false);
+            difficulty2.SetActive(true);
         }
 
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            if(tab == 0)
+            FindObjectOfType<AudioManager>().Play("UI");
+            if (tab == 0)
             {
                 tab =1;
             }else if(tab == 1)

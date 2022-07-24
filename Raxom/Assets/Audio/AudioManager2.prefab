@@ -1,0 +1,130 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6068401506086096963
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6068401506086096962}
+  - component: {fileID: 6068401506086097085}
+  m_Layer: 0
+  m_Name: AudioManager2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6068401506086096962
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6068401506086096963}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6068401506086097085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6068401506086096963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9b15710ae447664392868ac6de44eb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Level1 Theme
+    clip: {fileID: 8300000, guid: 2800036e757c18743b6243bcad61b5c9, type: 3}
+    volume: 0.03
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: AssassinRun
+    clip: {fileID: 8300000, guid: 924e3e09c67130946a6d7b666e8b8b68, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: MageWalk
+    clip: {fileID: 8300000, guid: 6478d7fb30f301b4fa8f74d5d1dad094, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: JumpStart
+    clip: {fileID: 8300000, guid: 8ea8027dfb737554b81df9ca50f0e0cd, type: 3}
+    volume: 1
+    pitch: 2.02
+    loop: 0
+    source: {fileID: 0}
+  - name: JumpLand
+    clip: {fileID: 8300000, guid: 54cd8769272b7ca4c9a1386d106f621d, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Mage1
+    clip: {fileID: 8300000, guid: 8a44b12d3e3f24b1a89dc7f0b66756f4, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Mage2
+    clip: {fileID: 8300000, guid: cdfae31f0b58546d3ac1015effc38f01, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: MageCast
+    clip: {fileID: 8300000, guid: 674258a055e994b72bbb15a28eb79838, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: AssassinDash
+    clip: {fileID: 8300000, guid: 842b69be68a079241bcb76b9a053ee99, type: 3}
+    volume: 0.6
+    pitch: 0.7
+    loop: 0
+    source: {fileID: 0}
+  - name: AssassinDashAttack
+    clip: {fileID: 8300000, guid: 76bcedd7e8f91fa4cb65711ec6aebeac, type: 3}
+    volume: 0.4
+    pitch: 1.1
+    loop: 0
+    source: {fileID: 0}
+  - name: Assassin1
+    clip: {fileID: 8300000, guid: c5955b1ca51d47245ae5e5e10395d910, type: 3}
+    volume: 0.3
+    pitch: 0.7
+    loop: 0
+    source: {fileID: 0}
+  - name: Assassin2
+    clip: {fileID: 8300000, guid: a7736c1763bd76c4eb0d52aaad581deb, type: 3}
+    volume: 0.3
+    pitch: 0.7
+    loop: 0
+    source: {fileID: 0}
+  - name: Assassin3
+    clip: {fileID: 8300000, guid: ef18a5a7071e4a54ba749b93057e0864, type: 3}
+    volume: 0.3
+    pitch: 0.7
+    loop: 0
+    source: {fileID: 0}
+  - name: Assassin4
+    clip: {fileID: 8300000, guid: 80502e18f68bb734b9dded7bb8d2e750, type: 3}
+    volume: 0.3
+    pitch: 0.7
+    loop: 0
+    source: {fileID: 0}

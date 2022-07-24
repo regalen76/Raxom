@@ -39,7 +39,7 @@ public class Character2DController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.UpArrow) && IsGrounded())  //input jump harus update
+        if (Input.GetKeyDown(KeyCode.UpArrow) && IsGrounded())  //input jump harus update
         {
             jump = true;
         }
@@ -53,7 +53,11 @@ public class Character2DController : MonoBehaviour
             isDashingAnimation = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R))  //reload level
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))  //goto menu
         {
             SceneManager.LoadScene(0);
         }
@@ -61,14 +65,41 @@ public class Character2DController : MonoBehaviour
 
     private void FixedUpdate()   //biar movement gak jitter
     {
-        if(selectedIndex == 0)  //jika chara assassin
+        if (selectedIndex == 0)  //jika chara assassin
         {
-            MovementSpeed = 15;
-            JumpForce = 25;
+            if (SceneManager.GetActiveScene().buildIndex == 4) // jika level 2
+            {
+                MovementSpeed = 20;
+                JumpForce = 30;
+            }
+            else if (SceneManager.GetActiveScene().buildIndex == 5)  // jika level 3
+            {
+                MovementSpeed = 15;
+                JumpForce = 30;
+            }
+            else
+            {
+                MovementSpeed = 15;
+                JumpForce = 25;
+            }
+                
         } else if(selectedIndex == 1) // jika chara mage
         {
-            MovementSpeed = 7;
-            JumpForce = 25;
+            if(SceneManager.GetActiveScene().buildIndex == 4)  // jika level 2
+            {
+                MovementSpeed = 12;
+                JumpForce = 30;
+            } else if (SceneManager.GetActiveScene().buildIndex == 5)  // jika level 3
+            {
+                MovementSpeed = 7;
+                JumpForce = 30;
+            }
+            else
+            {
+                MovementSpeed = 7;
+                JumpForce = 25;
+            }
+            
         }
         if (!this.animator.GetCurrentAnimatorStateInfo(0).IsName("Assassin_attack1") && !this.animator.GetCurrentAnimatorStateInfo(0).IsName("Assassin_dash") && !this.animator.GetCurrentAnimatorStateInfo(0).IsName("Assassin_dashattack") && !this.animator.GetCurrentAnimatorStateInfo(0).IsName("Mage_attack1") && !this.animator.GetCurrentAnimatorStateInfo(0).IsName("Player_transition1") && !this.animator.GetCurrentAnimatorStateInfo(0).IsName("Mage_attack2") && !this.animator.GetCurrentAnimatorStateInfo(0).IsName("Player_transition2"))
         {   //jika melakukan attack1 ass && dashattack ass && mage attack1 && mage attack2 maka gak bisa gerak
@@ -143,12 +174,24 @@ public class Character2DController : MonoBehaviour
 
             if(_rigidbody.velocity.y>0.001f){
                 animator.SetBool("IsJumping", true);
+                FindObjectOfType<AudioManager2>().Play("JumpStart");
             }
             
         }
     }
 
-    private bool IsGrounded(){
+    public bool IsGrounded(){
         return Physics2D.BoxCast(coll.bounds.center,coll.bounds.size,0f,Vector2.down, .1f, jumpableGround);
+    }
+
+    public void WalkSound()
+    {
+        if (selectedIndex == 0)
+        {
+            FindObjectOfType<AudioManager2>().Play("AssassinRun");
+        } else if(selectedIndex == 1)
+        {
+            FindObjectOfType<AudioManager2>().Play("MageWalk");
+        }
     }
 }
